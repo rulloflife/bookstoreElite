@@ -7,7 +7,6 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    //
     function addProduct(Request $req)
     {
         $product = new Product;
@@ -30,6 +29,4 @@ class ProductController extends Controller
         $product = Product::all();
         return $product->find($id);
     }
-    
-
 }

@@ -85,6 +85,13 @@ const Navbar = ({click}) => {
                         <i className="fa fa-user-circle" aria-hidden="true"></i>                                       
                     </Link>  
                 </li>
+                <li>
+                    <Link to="/addbook" className="accoun-link">
+                        Add Book                                     
+                    </Link>  
+                </li>
+
+                
             </ul>
         </nav>
         <div className="search-continer">
@@ -104,6 +111,7 @@ const Navbar = ({click}) => {
         <div className="search-icon">
             <i class="fa fa-search" aria-hidden="true"></i>
         </div>
+        
     </section>    
     )
 }

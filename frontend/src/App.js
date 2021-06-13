@@ -12,6 +12,7 @@ import About from './view/About';
 import Productcategory from './view/ProductCategory';
 import Register from './components/form/Register';
 import Login from './components/form/Login';
+import AddBook from './view/AddBook';
 
 import Navbar from './components/Navbar';
 import Backdrop from './components/Backdrop';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/productcategory" component={Productcategory} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/addbook" component={AddBook} />
         </Switch>
       </main>
       <Footer />
