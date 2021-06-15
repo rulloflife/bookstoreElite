@@ -19,9 +19,10 @@ use App\Http\Controllers\ProductController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 }); 
-
+ 
 Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
 Route::post('addproduct',[ProductController::class,'addProduct']);
 Route::get('getproduct',[ProductController::class,'getAllProducts']);
 Route::get('getproductbyid/{id}',[ProductController::class,'getAllProductById']);
+Route::get('searchall/{id}', [ProductController::class, 'searchAll']);
