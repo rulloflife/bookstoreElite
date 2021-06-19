@@ -1,10 +1,10 @@
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link ,useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 const Navbar = ({ click }) => {
-
+    const history = useHistory();
     const cart = useSelector((state) => state.cart);
     const { cartItems } = cart;
 
@@ -26,7 +26,7 @@ const Navbar = ({ click }) => {
             data.push(result[i].name);
         }
         setDataw(data)
-     
+
     }
 
     const handdlechange = (e) => {
@@ -66,6 +66,10 @@ const Navbar = ({ click }) => {
                 </ul>
             )
         }
+    }    
+
+    const searchSearch = () => {
+        history.push("/search/" + searchtxt)
     }
 
     return (
@@ -139,14 +143,14 @@ const Navbar = ({ click }) => {
                     </li>
                     <li>
                         <Link to="/register" className="accoun-link">
-                            <i className="fa fa-user-circle" aria-hidden="true"></i>
+                            <i className="fa fa-user-circle" aria-hidden="true"></i>                            
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/addbook" className="accoun-link">
                             Add Book
                         </Link>
-                    </li>
+                    </li> */}
 
 
                 </ul>
@@ -165,10 +169,10 @@ const Navbar = ({ click }) => {
                     <div className="search-input" >
                         <input className="input-text" type="text" name="search" value={searchtxt} onChange={handdlechange} placeholder="search" />
                         {getSuggestion()}
-                        <div className="icon" ><i className="fas fa-search"></i></div>
+                        <div className="icon" onClick={()=> searchSearch()}><i className="fas fa-search"></i></div>
                     </div>
                 </div>
-                
+
             </div>
             <div className="search-icon">
                 <i class="fa fa-search" aria-hidden="true"></i>

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::post('addproduct',[ProductController::class,'addProduct']);
 Route::get('getproduct',[ProductController::class,'getAllProducts']);
 Route::get('getproductbyid/{id}',[ProductController::class,'getAllProductById']);
 Route::get('searchall/{id}', [ProductController::class, 'searchAll']);
+Route::post('order',[OrderController::class,'addOrder']);
+Route::get('orderbyuser/{key}',[OrderController::class,'orderbyuser']);

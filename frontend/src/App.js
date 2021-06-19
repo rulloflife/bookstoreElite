@@ -18,6 +18,9 @@ import Navbar from './components/Navbar';
 import Backdrop from './components/Backdrop';
 import SideDrawer from './components/SideDrawer';
 import Footer from './components/Footer';
+import Success from './view/Success'
+import Userprofile from './view/Userprofile'
+import SearchList from './view/SearchList';
 
 
 function App() {
@@ -41,6 +44,9 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/addbook" component={AddBook} />
+          <Route exact path="/success" component={Success} />
+          <Route exact path="/profile" component={Userprofile} />
+          <Route exact path="/search/:key" component={SearchList} />
         </Switch>
       </main>
       <Footer />

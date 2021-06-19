@@ -5,9 +5,12 @@ function Login() {
     const history = useHistory();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
 
     async function login() {
-        let item = (email, password);
+        let item = [email, password];
+        console.log("Email ", item)
+
         let result = await fetch("http://localhost:8000/api/login", {
             method: 'POST',
             headers: {
@@ -17,8 +20,9 @@ function Login() {
             body: JSON.stringify(item)
         });
         result = await result.json();
-        localStorage.setItem("user-info",JSON.stringify(result))
-        history.push("/")
+        
+            localStorage.setItem("user-info",JSON.stringify(result))
+            history.push("/")       
     }
 
     return (
